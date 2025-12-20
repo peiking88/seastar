@@ -1,0 +1,257 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1337,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1341,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1345,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1366,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1368,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1384,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1390,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1410,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1414,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1419,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				{
+					"from" : "include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				{
+					"from" : "build/gen/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"scripts/seastar-json2code.py"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"libseastar.a"
+			],
+			"targetId" : "seastar::@6890427a1f51a3e7e1df",
+			"targetIndex" : 76,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"libseastar_testing.a"
+			],
+			"targetId" : "seastar_testing::@6890427a1f51a3e7e1df",
+			"targetIndex" : 82,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"libseastar_perf_testing.a"
+			],
+			"targetId" : "seastar_perf_testing::@6890427a1f51a3e7e1df",
+			"targetIndex" : 80,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Seastar",
+			"exportName" : "seastar-export",
+			"exportTargets" : 
+			[
+				{
+					"id" : "seastar::@6890427a1f51a3e7e1df",
+					"index" : 76
+				},
+				{
+					"id" : "seastar_testing::@6890427a1f51a3e7e1df",
+					"index" : 82
+				},
+				{
+					"id" : "seastar_perf_testing::@6890427a1f51a3e7e1df",
+					"index" : 80
+				}
+			],
+			"paths" : 
+			[
+				"CMakeFiles/Export/lib/cmake/Seastar/SeastarTargets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Seastar",
+			"paths" : 
+			[
+				"build/SeastarConfig.cmake",
+				"build/SeastarConfigVersion.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Seastar",
+			"paths" : 
+			[
+				"cmake/FindGnuTLS.cmake",
+				"cmake/FindLinuxMembarrier.cmake",
+				"cmake/FindSanitizers.cmake",
+				"cmake/FindStdAtomic.cmake",
+				"cmake/Findc-ares.cmake",
+				"cmake/Finddpdk.cmake",
+				"cmake/Findhwloc.cmake",
+				"cmake/Findlksctp-tools.cmake",
+				"cmake/Findlz4.cmake",
+				"cmake/Findragel.cmake",
+				"cmake/Findrt.cmake",
+				"cmake/Finducontext.cmake",
+				"cmake/Findyaml-cpp.cmake",
+				"cmake/SeastarDependencies.cmake",
+				"cmake/FindLibUring.cmake",
+				"cmake/FindSystemTap-SDT.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Seastar",
+			"paths" : 
+			[
+				"cmake/code_tests"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 9,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				{
+					"from" : "build/seastar-install.pc",
+					"to" : "seastar.pc"
+				}
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 10,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				{
+					"from" : "build/seastar-testing-install.pc",
+					"to" : "seastar-testing.pc"
+				}
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}

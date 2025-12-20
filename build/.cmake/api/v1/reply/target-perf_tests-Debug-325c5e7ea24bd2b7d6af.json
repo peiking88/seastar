@@ -1,0 +1,248 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"add_dependencies",
+			"seastar_add_test"
+		],
+		"files" : 
+		[
+			"tests/perf/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 24,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 63,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 67,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 70,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 6
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 73,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 8
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 76,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 10
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 79,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 12
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 83,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 14
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 16
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 90,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 18
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 93,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 20
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 96,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 22
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 100,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 24
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 103,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 26
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "test_perf_fstream::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "test_perf_fair_queue::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "test_perf_shared_token_bucket::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "test_perf_future_util::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "test_perf_rpc::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 13,
+			"id" : "test_perf_smp_submit_to::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 15,
+			"id" : "test_perf_thread_context_switch::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 17,
+			"id" : "test_perf_coroutine::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 19,
+			"id" : "test_perf_allocator::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 21,
+			"id" : "test_perf_container::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 23,
+			"id" : "test_perf_http_client::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 25,
+			"id" : "test_perf_perf_tests::@bab099631fcada92e095"
+		},
+		{
+			"backtrace" : 27,
+			"id" : "test_perf_metrics::@bab099631fcada92e095"
+		}
+	],
+	"id" : "perf_tests::@bab099631fcada92e095",
+	"name" : "perf_tests",
+	"paths" : 
+	{
+		"build" : "tests/perf",
+		"source" : "tests/perf"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

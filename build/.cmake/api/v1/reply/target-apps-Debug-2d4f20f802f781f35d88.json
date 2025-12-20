@@ -1,0 +1,176 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"add_dependencies",
+			"seastar_add_app"
+		],
+		"files" : 
+		[
+			"apps/CMakeLists.txt",
+			"apps/httpd/CMakeLists.txt",
+			"apps/io_tester/CMakeLists.txt",
+			"apps/rpc_tester/CMakeLists.txt",
+			"apps/iotune/CMakeLists.txt",
+			"apps/memcached/CMakeLists.txt",
+			"apps/seawreck/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 23,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 48,
+				"parent" : 3
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 23,
+				"parent" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 48,
+				"parent" : 6
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 26,
+				"parent" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 48,
+				"parent" : 8
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 23,
+				"parent" : 10
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 48,
+				"parent" : 11
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 23,
+				"parent" : 13
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 48,
+				"parent" : 14
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 5,
+				"line" : 32,
+				"parent" : 16
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 48,
+				"parent" : 17
+			},
+			{
+				"file" : 6
+			},
+			{
+				"command" : 2,
+				"file" : 6,
+				"line" : 23,
+				"parent" : 19
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 48,
+				"parent" : 20
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "app_httpd::@13ce99803f2d8dcbc531"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "app_io_tester::@337fa50279961ac268d4"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "app_ioinfo::@337fa50279961ac268d4"
+		},
+		{
+			"backtrace" : 12,
+			"id" : "app_rpc_tester::@b912cbe5bec53c255b68"
+		},
+		{
+			"backtrace" : 15,
+			"id" : "app_iotune::@fb2d2babe176d40d5788"
+		},
+		{
+			"backtrace" : 18,
+			"id" : "app_memcached::@5589a3833bf399fa1afd"
+		},
+		{
+			"backtrace" : 21,
+			"id" : "app_seawreck::@2202e654e56a26be7092"
+		}
+	],
+	"id" : "apps::@9e189ee61a034fc9b705",
+	"name" : "apps",
+	"paths" : 
+	{
+		"build" : "apps",
+		"source" : "apps"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

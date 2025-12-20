@@ -1,0 +1,40 @@
+prefix=/home/li/seastar/build
+exec_prefix=${prefix}
+seastar_include_flags=-I/home/li/seastar/include -I/home/li/seastar/build/gen/include
+libdir=/home/li/seastar/build
+
+Name: Seastar
+Url: http://seastar-project.org
+Description: Advanced C++ framework for high-performance server applications on modern hardware.
+Version: 1.0
+
+# Platform dependencies.
+stdatomic_libs=-latomic
+dl_libs=-ldl
+rt_libs=
+
+# Dependencies of dependencies.
+boost_system_libs=
+
+# Dependencies.
+boost_cflags=-I/usr/include
+boost_program_options_libs=/usr/lib/x86_64-linux-gnu/libboost_program_options.so
+c_ares_cflags=-I/usr/include
+c_ares_libs=/usr/lib/x86_64-linux-gnu/libcares.so
+fmt_cflags=-I/usr/include
+fmt_libs=/usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1
+lksctp_tools_cflags=-I/usr/include
+lksctp_tools_libs=/usr/lib/x86_64-linux-gnu/libsctp.so
+liburing_cflags=
+liburing_libs=
+dpdk_libs=
+# Us.
+seastar_cflags=${seastar_include_flags} -Wno-maybe-uninitialized -Wno-error=unused-result -fstack-clash-protection -fsanitize=address -fsanitize=undefined -fsanitize=vptr -DSEASTAR_API_LEVEL=9 -DSEASTAR_SSTRING -DSEASTAR_DEPRECATED_OSTREAM_FORMATTERS -DSEASTAR_LOGGER_COMPILE_TIME_FMT -DSEASTAR_SCHEDULING_GROUPS_COUNT=16 -DSEASTAR_DEBUG -DSEASTAR_DEFAULT_ALLOCATOR -DSEASTAR_SHUFFLE_TASK_QUEUE -DSEASTAR_DEBUG_SHARED_PTR -DSEASTAR_DEBUG_PROMISE -DSEASTAR_LOGGER_TYPE_STDOUT -DSEASTAR_TYPE_ERASE_MORE -DBOOST_NO_CXX98_FUNCTION_BASE -DFMT_LOCALE -DFMT_SHARED
+seastar_libs=${libdir}/libseastar.a  -fsanitize=address -fsanitize=undefined -fsanitize=vptr
+
+Requires: liblz4 >= 1.7.3
+Requires.private: gnutls >= 3.2.26, protobuf >= 2.5.0, hwloc >= 1.11.2, yaml-cpp >= 0.5.1
+Conflicts:
+Cflags: -std=c++23 ${boost_cflags} ${c_ares_cflags} ${fmt_cflags} ${liburing_cflags} ${lksctp_tools_cflags} ${seastar_cflags}
+Libs: ${seastar_libs} ${boost_program_options_libs} ${c_ares_libs} ${fmt_libs}
+Libs.private: ${dl_libs} ${rt_libs} ${lksctp_tools_libs} ${liburing_libs} ${stdatomic_libs} ${dpdk_libs}

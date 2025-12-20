@@ -1,0 +1,73 @@
+Performing C++ SOURCE FILE Test Cxx_Compiler_BZ107852_Free failed with the following output:
+Change Dir: /home/li/seastar/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_757dc && [1/2] Building CXX object CMakeFiles/cmTC_757dc.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_757dc.dir/src.cxx.o 
+/usr/bin/g++ -DCxx_Compiler_BZ107852_Free -DFMT_LOCALE -DFMT_SHARED  -Werror=stringop-overflow -Werror=array-bound -std=gnu++23 -o CMakeFiles/cmTC_757dc.dir/src.cxx.o -c /home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: ‘-Werror=array-bound’: no option ‘-Warray-bound’; did you mean ‘-Warray-bounds’?
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+#include <fmt/ranges.h>
+
+int main() {
+    float grades[] = {3.14};
+    fmt::print("{}", grades);
+}
+Performing C++ SOURCE FILE Test Cxx_Compiler_IMPLEMENTS_P2581R1 failed with the following output:
+Change Dir: /home/li/seastar/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_d63d1 && [1/2] Building CXX object CMakeFiles/cmTC_d63d1.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_d63d1.dir/src.cxx.o 
+/usr/bin/g++ -DCxx_Compiler_IMPLEMENTS_P2581R1  -std=c++23 -std=gnu++23 -o CMakeFiles/cmTC_d63d1.dir/src.cxx.o -c /home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx
+/home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx:12:8: error: class template argument deduction failed:
+   12 | C c2(42);
+      |        ^
+/home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx:12:8: error: no matching function for call to ‘C(int)’
+/home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx:8:5: note: candidate: ‘template<class ... T> C(B<T ...>)-> C<T>’
+    8 |     C(B<T...>) {}
+      |     ^
+/home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx:8:5: note:   template argument deduction/substitution failed:
+/home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx:12:8: note:   mismatched types ‘B<T ...>’ and ‘int’
+   12 | C c2(42);
+      |        ^
+/home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx:6:33: note: candidate: ‘template<class ... T> C(C<T>)-> C<T>’
+    6 | template <typename... T> struct C : public B<T...> {
+      |                                 ^
+/home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx:6:33: note:   template argument deduction/substitution failed:
+/home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx:12:8: note:   mismatched types ‘C<T>’ and ‘int’
+   12 | C c2(42);
+      |        ^
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+template <typename... T> struct B {
+    B(T...) {}
+};
+
+template <typename... T> struct C : public B<T...> {
+    using B<T...>::B;
+    C(B<T...>) {}
+};
+
+B(int) -> B<char>;
+C c2(42);
+
+int main() {}
+
+Performing C++ SOURCE FILE Test ErrorWarnings_FOUND failed with the following output:
+Change Dir: /home/li/seastar/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_89dc7 && [1/2] Building CXX object CMakeFiles/cmTC_89dc7.dir/src.cxx.o
+FAILED: CMakeFiles/cmTC_89dc7.dir/src.cxx.o 
+/usr/bin/g++ -DErrorWarnings_FOUND  -Wno-error=#warnings -std=gnu++23 -o CMakeFiles/cmTC_89dc7.dir/src.cxx.o -c /home/li/seastar/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: '-Wno-error=#warnings': no option '-W#warnings'; did you mean '--no-warnings'?
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main() { return 0; }

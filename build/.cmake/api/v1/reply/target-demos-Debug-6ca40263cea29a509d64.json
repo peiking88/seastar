@@ -1,0 +1,392 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"add_dependencies",
+			"seastar_add_demo"
+		],
+		"files" : 
+		[
+			"demos/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 24,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 54,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 58,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 62,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 6
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 65,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 8
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 68,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 10
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 71,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 12
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 74,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 14
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 77,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 16
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 80,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 18
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 83,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 20
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 86,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 22
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 89,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 24
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 92,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 26
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 95,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 28
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 100,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 30
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 105,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 32
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 108,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 34
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 111,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 36
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 114,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 38
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 117,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 40
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 120,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 42
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 123,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 44
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "demo_block_discard::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "demo_coroutines::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "demo_hello-world::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "demo_websocket_server::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "demo_echo::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 13,
+			"id" : "demo_ip::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 15,
+			"id" : "demo_line_count::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 17,
+			"id" : "demo_l3::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 19,
+			"id" : "demo_rpc::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 21,
+			"id" : "demo_scheduling_group::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 23,
+			"id" : "demo_tcp::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 25,
+			"id" : "demo_tcp_sctp_client::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 27,
+			"id" : "demo_tcp_sctp_server::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 29,
+			"id" : "demo_tls_echo_server::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 31,
+			"id" : "demo_tls_simple_client::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 33,
+			"id" : "demo_udp_client::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 35,
+			"id" : "demo_udp_server::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 37,
+			"id" : "demo_udp_zero_copy::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 39,
+			"id" : "demo_sharded_parameter::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 41,
+			"id" : "demo_file::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 43,
+			"id" : "demo_tutorial_examples::@a9e843653e3a5da897f6"
+		},
+		{
+			"backtrace" : 45,
+			"id" : "demo_http_client::@a9e843653e3a5da897f6"
+		}
+	],
+	"id" : "demos::@a9e843653e3a5da897f6",
+	"name" : "demos",
+	"paths" : 
+	{
+		"build" : "demos",
+		"source" : "demos"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
