@@ -14,14 +14,14 @@
 3、编译器使用gcc-11,修改cmake配置，关闭将警告认定为错误的选项。
 4、依据cooking_recipe.cmake统计出需要本地安装的依赖包，建立安装任务清单。
 5、每个安装任务使用cooking.sh -i下载安装本地依赖包，包括：
-   1）从/home/li/3rdparty目录下载解压依赖包到seastar/build/_cooking/ingredient。
-   2）优先使用静态编译安装依赖包到seastar/build/_cooking/stow。  
-   3）将编译好的可执行文件、头文件、库文件、文档以符号链接方式安装到seastar/build/_cooking/installed对应子目录下。
-   4）当发现编译安装错误需要清理之前安装文件时只清单当前安装依赖包，不要清理已完成安装的依赖包。
+	1）从/home/li/3rdparty目录下载解压依赖包到seastar/build/_cooking/ingredient。
+	2）优先使用静态编译安装依赖包到seastar/build/_cooking/stow。  
+	3）将编译好的可执行文件、头文件、库文件、文档以符号链接方式安装到seastar/build/_cooking/installed对应子目录下。
+	4）当发现编译安装错误需要清理之前安装文件时只清单当前安装依赖包，不要清理已完成安装的依赖包。
 6、持续跟踪检查任务是否正确完成，包括：
-   1）seastar/build/_cooking/ingredient目录下是否下载解压成功。
-   2）seastar/build/_cooking/stow目录下是否已经编译成功，在不删除其他已编译包的前提下，对没有编译成功的依赖包单独使用编译命令进行编译。
-   3）seastar/build/_cooking/installed目录下符号链接是否正确，在不删除其他已安装包的前提下，对没有正确完成符号链接的依赖包单独使用stow命令建立符号链接。
+	1）seastar/build/_cooking/ingredient目录下是否下载解压成功。
+	2）seastar/build/_cooking/stow目录下是否已经编译成功，在不删除其他已编译包的前提下，对没有编译成功的依赖包单独使用编译命令进行编译。
+	3）seastar/build/_cooking/installed目录下符号链接是否正确，在不删除其他已安装包的前提下，对没有正确完成符号链接的依赖包单独使用stow命令建立符号链接。
    
 第三步、已经在本地安装好依赖包，考HACKING.md，按照下面要求生成seastar构建配置:
 1、创建一个任务列表来跟踪生成配置进度。
@@ -29,14 +29,11 @@
 3、编译器使用/opt/gcc-13.4.0目录下gcc，采用c++23标准
 4、修改cmake配置，关闭将警告认定为错误的选项。
 5、使用下面命令编译release版（包括：apps/demos/tests）：
-cd /home/li/seastar/build/release && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../..
+	$cd /home/li/seastar/build/release
+	$cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../..
+	$make -j$(nproc)
 6、使用下面命令编译debug版（包括：apps/demos/tests）:
-cd /home/li/seastar/build/debug && cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../..
-7、使用make -j$(nproc)加快编译速度。
-
-
-
-#修改cooking recipe文件中的下载源，将github.com替换为bgithub.xyz。
-#通过https://mirrors.tuna.tsinghua.edu.cn/gnu/gmp/gmp-6.1.2.tar.xz下载安装gmp-6.1.2。
-#通过https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.3.tar.xz下载安装GnuTLS。
+	$cd /home/li/seastar/build/debug
+	$cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../..
+	$make -j$(nproc)
 
