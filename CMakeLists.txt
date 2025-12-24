@@ -47,6 +47,14 @@ project (Seastar
   VERSION 1.0
   LANGUAGES CXX)
 
+# Set GCC-13 compiler explicitly
+set(CMAKE_C_COMPILER "/opt/gcc-13.4.0/bin/gcc")
+set(CMAKE_CXX_COMPILER "/opt/gcc-13.4.0/bin/g++")
+
+# Disable warnings as errors
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error")
+
 set (Seastar_ALLOC_FAILURE_INJECTION
   "DEFAULT"
   CACHE

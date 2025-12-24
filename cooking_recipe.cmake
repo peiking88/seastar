@@ -301,7 +301,7 @@ cooking_ingredient (dpdk
   EXTERNAL_PROJECT_ARGS
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dpdk
     CONFIGURE_COMMAND
-      env CC=${CMAKE_C_COMPILER} ${Meson_EXECUTABLE} setup ${dpdk_args} --prefix=<INSTALL_DIR> <BINARY_DIR> <SOURCE_DIR>
+      env CC=/opt/gcc-13.4.0/bin/gcc CXX=/opt/gcc-13.4.0/bin/g++ ${Meson_EXECUTABLE} setup ${dpdk_args} --prefix=<INSTALL_DIR> <BINARY_DIR> <SOURCE_DIR>
     BUILD_COMMAND
       ${Ninja_EXECUTABLE} -C <BINARY_DIR>
     INSTALL_COMMAND
@@ -320,7 +320,7 @@ cooking_ingredient (liburing
     URL https://github.com/axboe/liburing/archive/liburing-2.1.tar.gz
     URL_MD5 78f13d9861b334b9a9ca0d12cf2a6d3c
     CONFIGURE_COMMAND
-      ${CMAKE_COMMAND} -E env CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
+      ${CMAKE_COMMAND} -E env CC=/opt/gcc-13.4.0/bin/gcc CXX=/opt/gcc-13.4.0/bin/g++
       <SOURCE_DIR>/configure --prefix=<INSTALL_DIR>
     BUILD_COMMAND <DISABLE>
     BUILD_BYPRODUCTS "<SOURCE_DIR>/src/liburing.a"
