@@ -5,7 +5,7 @@
 2、不得修改或新增系统及seastar源代码、头文件、运行脚本。
 3、将cooking_recipe.cmake所有依赖包下载地址修改为/home/li/3rdparty。
 4、检查cooking_recipe.cmake确保所有依赖包都从/home/li/3rdparty下载，MD5或哈希码匹配，其他配置不变。
-5、检查cooking_recipe.cmake确保boost包的C++标准标准为c++17。
+5、检查cooking_recipe.cmake确保boost包的C++标准标准为c++23。
 6、所有本地包优先编译为静态链接库。
 
 第二步、参考HACKING.md，按下面顺序和规则安装本地依赖包：
@@ -13,11 +13,12 @@
 2、不得修改或新增系统及seastar源代码、头文件、运行脚本。
 3、编译器使用gcc-11,修改cmake配置，关闭将警告认定为错误的选项。
 4、依据cooking_recipe.cmake统计出需要本地安装的依赖包，建立安装任务清单。
-5、每个安装任务使用cooking.sh -i下载安装本地依赖包，包括：
+5、依次对每个安装任务使用cooking.sh -i下载安装本地依赖包，包括：
 	1）从/home/li/3rdparty目录下载解压依赖包到seastar/build/_cooking/ingredient。
 	2）优先使用静态编译安装依赖包到seastar/build/_cooking/stow。  
 	3）将编译好的可执行文件、头文件、库文件、文档以符号链接方式安装到seastar/build/_cooking/installed对应子目录下。
 	4）当发现编译安装错误需要清理之前安装文件时只清单当前安装依赖包，不要清理已完成安装的依赖包。
+	5）确保当前本地依赖包安装成功后再安装下一个。
 6、持续跟踪检查任务是否正确完成，包括：
 	1）seastar/build/_cooking/ingredient目录下是否下载解压成功。
 	2）seastar/build/_cooking/stow目录下是否已经编译成功，在不删除其他已编译包的前提下，对没有编译成功的依赖包单独使用编译命令进行编译。
@@ -28,12 +29,8 @@
 2、不得修改或新增系统及seastar源代码、头文件、运行脚本。
 3、编译器使用/opt/gcc-13.4.0目录下gcc，采用c++23标准
 4、修改cmake配置，关闭将警告认定为错误的选项。
-5、使用下面命令编译release版（包括：apps/demos/tests）：
-	$cd /home/li/seastar/build/release
-	$cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../..
-	$make -j$(nproc)
-6、使用下面命令编译debug版（包括：apps/demos/tests）:
-	$cd /home/li/seastar/build/debug
-	$cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../..
-	$make -j$(nproc)
+5、使用下面命令编译release版（包括：apps/demos/tests，注意修改seastar路径）：
+	cd /home/li/seastar/build/release && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../.. && make -j$(nproc)
+6、使用下面命令编译debug版（包括：apps/demos/tests，注意修改seastar路径）:
+	cd /home/li/seastar/build/release && cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../.. && make -j$(nproc)
 
