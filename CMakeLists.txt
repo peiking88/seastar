@@ -55,11 +55,11 @@ set (Seastar_ALLOC_FAILURE_INJECTION
 
 option (Seastar_TASK_BACKTRACE
   "Collect backtrace at deferring points."
-  OFF)
+  ON)
 
 option (Seastar_DEBUG_ALLOCATIONS
   "For now just writes 0xab to newly allocated memory"
-  OFF)
+  ON)
 
 option (Seastar_SSTRING
   "Use seastar's own string implementation"
