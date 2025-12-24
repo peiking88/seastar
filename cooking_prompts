@@ -32,5 +32,5 @@
 5、使用下面命令编译release版（包括：apps/demos/tests，注意修改seastar路径）：
 	cd /home/li/seastar/build/release && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../.. && make -j$(nproc)
 6、使用下面命令编译debug版（包括：apps/demos/tests，注意修改seastar路径）:
-	cd /home/li/seastar/build/release && cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../.. && make -j$(nproc)
+	cd /home/li/seastar/build/debug && cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=/opt/gcc-13.4.0/bin/g++ -DCMAKE_PREFIX_PATH=/home/li/seastar/build/_cooking/installed -DSeastar_TESTING=ON -DSeastar_DEMOS=ON -DSeastar_APPS=ON -DSeastar_DOCS=ON -Wno-error ../.. && make -j$(nproc)
 
