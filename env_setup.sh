@@ -1,8 +1,8 @@
 #!/bin/bash
 # 设置编译器和环境变量
-export CC=/opt/gcc-13.4.0/bin/gcc
-export CXX=/opt/gcc-13.4.0/bin/g++
-export LD_LIBRARY_PATH=/opt/gcc-13.4.0/lib64:$LD_LIBRARY_PATH
+export CC=/bin/gcc
+export CXX=/bin/g++
+export LD_LIBRARY_PATH=/lib64:$LD_LIBRARY_PATH
 
 # 设置C++标准为C++23
 export CMAKE_CXX_STANDARD=23

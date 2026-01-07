@@ -85,9 +85,7 @@ std::ostream& operator<<(std::ostream& os, const opt_family& f) {
 typedef struct ares_channeldata ares_channel_t;
 #endif
 
-#if FMT_VERSION >= 90000
 template <> struct fmt::formatter<seastar::net::opt_family> : fmt::ostream_formatter {};
-#endif
 
 #include <seastar/util/log.hh>
 
@@ -1004,12 +1002,17 @@ dns_resolver::impl::make_hostent(const ares_addrinfo* ai) {
         e.names.emplace_back(cname->alias);
     }
     for (auto node = ai->nodes; node != nullptr; node = node->ai_next) {
+        // The TTL can be zero (dont cache) or greater up to 2^31 - 1 (in seconds)
+        // https://datatracker.ietf.org/doc/html/rfc2181#section-8
+        // https://datatracker.ietf.org/doc/html/rfc1035#section-3.2.1
         switch (node->ai_family) {
             case AF_INET:
                 e.addr_list.emplace_back(reinterpret_cast<const sockaddr_in*>(node->ai_addr)->sin_addr);
+                e.addr_ttls.emplace_back(std::max(0, node->ai_ttl));
                 break;
             case AF_INET6:
                 e.addr_list.emplace_back(reinterpret_cast<const sockaddr_in6*>(node->ai_addr)->sin6_addr);
+                e.addr_ttls.emplace_back(std::max(0, node->ai_ttl));
                 break;
         }
     }

@@ -47,14 +47,6 @@ project (Seastar
   VERSION 1.0
   LANGUAGES CXX)
 
-# Set GCC-13 compiler explicitly
-set(CMAKE_C_COMPILER "/opt/gcc-13.4.0/bin/gcc")
-set(CMAKE_CXX_COMPILER "/opt/gcc-13.4.0/bin/g++")
-
-# Disable warnings as errors
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error")
-
 set (Seastar_ALLOC_FAILURE_INJECTION
   "DEFAULT"
   CACHE
@@ -63,11 +55,11 @@ set (Seastar_ALLOC_FAILURE_INJECTION
 
 option (Seastar_TASK_BACKTRACE
   "Collect backtrace at deferring points."
-  ON)
+  OFF)
 
 option (Seastar_DEBUG_ALLOCATIONS
   "For now just writes 0xab to newly allocated memory"
-  ON)
+  OFF)
 
 option (Seastar_SSTRING
   "Use seastar's own string implementation"
@@ -395,7 +387,7 @@ find_package (Valgrind REQUIRED)
 
 cmake_dependent_option (Seastar_LOGGER_COMPILE_TIME_FMT
   "Enable the compile-time {fmt} check when formatting logging messages" ON
-  "fmt_VERSION VERSION_GREATER_EQUAL 8.0.0" OFF)
+  "fmt_VERSION VERSION_GREATER_EQUAL 9.0.0" OFF)
 
 #
 # Code generation helpers.
@@ -801,7 +793,7 @@ target_include_directories (seastar
 
 set (Seastar_PRIVATE_CXX_FLAGS
   -fno-semantic-interposition
-  -Wall
+#  -Wall
   -Werror
   -Wimplicit-fallthrough
   -Wdeprecated
